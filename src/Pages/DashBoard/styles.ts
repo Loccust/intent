@@ -39,8 +39,15 @@ export const Container = styled.div`
     &{
       width: 100%;
       margin-left: 0;
+      padding: 0;
     }
   }
+
+  @media (min-width: 1400px){
+    &{
+      display: inline;
+    }
+  }    
 `;
 
 export const Activities = styled.div`
@@ -55,6 +62,7 @@ export const Activities = styled.div`
       height: 100%;
       width: 100%;
       background-color: var(--color-bg-primary);
+      min-width: 0;
     }
   }
 `;
@@ -66,6 +74,10 @@ export const Header = styled.div`
   @media (max-width: 900px){
     &{
       width: 100%;
+      min-width: 0;
+      height: 75px;
+      padding: 3% 5%;
+      background-color: var(--color-bg-tertiary);
     }
   }
 `;
@@ -93,6 +105,13 @@ export const Hours = styled.div`
   width: 100%;
   border-bottom: 1px solid #323541;
   padding-left: 65px;
+
+  @media (max-width: 900px){
+    &{
+      background-color: var(--color-bg-tertiary);
+      padding-left: 35px;
+    }
+  }  
 `;
 
 export const Th = styled.span`
@@ -102,6 +121,12 @@ export const Th = styled.span`
   justify-content: start;
   font-size: 1.17em;
   font-weight: bold;
+  @media (max-width: 900px){
+    &{
+      font-size: 0.8em;
+      font-weight: medium;
+    }
+  }   
 `;
 
 export const Weeks = styled.div`
@@ -113,6 +138,15 @@ export const Weeks = styled.div`
   height: 470px;
   width: 65px;
   border-right: 1px solid #323541;
+
+  @media (max-width: 900px){
+    &{
+      background-color: var(--color-bg-tertiary);
+      height: calc(100vh - 125px);
+      min-height: 500px;
+      width: 35px;
+    }
+  }   
 `;
 
 export const TBody = styled.div`
@@ -120,7 +154,13 @@ export const TBody = styled.div`
   display: flex;
   flex-direction: row nowrap;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
+
+  @media (max-width: 900px){
+    &{
+      height: calc(100vh - 125px);
+    }
+  } 
 `;
 
 export const Td = styled.div`
@@ -130,10 +170,16 @@ export const Td = styled.div`
   &:not(:last-child){
     border-right: 1px solid #323541;
   }
+  @media (max-width: 900px){
+    &{
+      height: calc(100vh - 125px);
+      width: 35px;
+    }
+  } 
 `;
 
 export const Event = styled.div`
-  position: relative;
+  position: absolute;
   width: calc(70px * 2.5); /*Hour index*/
   height: 40px;
   margin-top: calc(45px * 3); /*week index*/ 
@@ -156,5 +202,12 @@ export const Event = styled.div`
     right: -2px;
     display: flex;
     }
+
+  @media (max-width: 900px){
+    &{
+      width: calc(10% * 2.5);
+      font-size: 0.8rem;
+    }
+  }    
 `;
 

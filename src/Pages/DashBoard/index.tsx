@@ -2,6 +2,10 @@ import React from 'react';
 import { Wrapper, SideMenu, Container, Activities, Header, Title, SubTitle, Hours, Th, Weeks, TBody, Td, Event  } from './styles';
 
 function DashBoard(){
+  let cols = []
+    for(let i=0; i<=12; i++){
+      cols.push(<Th>{i}</Th>)
+    }
   return(
       <Wrapper>
         <SideMenu/>
@@ -12,18 +16,7 @@ function DashBoard(){
           </Header>
           <Activities>
             <Hours>
-              <Th>01</Th>
-              <Th>02</Th>
-              <Th>03</Th>
-              <Th>04</Th>
-              <Th>05</Th>
-              <Th>06</Th>
-              <Th>07</Th>
-              <Th>08</Th>
-              <Th>09</Th>
-              <Th>10</Th>
-              <Th>11</Th>
-              <Th>12</Th>
+              { cols }
             </Hours>
             <TBody>
             <Weeks>
