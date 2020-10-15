@@ -1,9 +1,9 @@
 import React from 'react';
-import DashBoard from './Pages/DashBoard';
+import Routes from './routes';
 
 function App() {
   return (
-   <DashBoard/>
+   <Routes/>
   );
 }
 
