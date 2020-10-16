@@ -1,5 +1,6 @@
 import React from 'react';
-import { Wrapper, SideMenu, Container, Main, Header, Title, SubTitle, Hours, Th, Weeks, TBody, Td, Event  } from './styles';
+import SideMenu from '../../Components/SideMenu';
+import { Wrapper, Container, Main, Header, Title, SubTitle, Hours, Th, Weeks, TBody, Td, Event  } from './styles';
 
 function Activities(){
   return(

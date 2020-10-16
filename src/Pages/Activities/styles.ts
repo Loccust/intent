@@ -8,22 +8,6 @@ export const Wrapper = styled.div`
   flex-direction: column;
 `;
 
-export const SideMenu = styled.div`
-  background-color: var(--color-bg-tertiary);
-  position: fixed;
-  display: block;
-  width: 280px;
-  height: 100%;
-  left: 0px;
-  top: 0px;
-
-  @media (max-width: 1200px){
-        &{
-          display: none;
-        }
-    }
-`;
-
 export const Container = styled.div`
   background-color: var(--color-bg-primary);
   position: relative;
