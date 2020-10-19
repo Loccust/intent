@@ -3,6 +3,10 @@ import SideMenu from '../../Components/SideMenu';
 import { Wrapper, Container, Main, Header, Title, SubTitle, Hours, Th, Weeks, TBody, Td, Event  } from './styles';
 
 function Activities(){
+  let Ths = []
+    for(let i=0; i<=12; i++){
+      Ths.push(<Th>{i}</Th>);
+    }
   return(
       <Wrapper>
         <SideMenu/>
@@ -13,18 +17,7 @@ function Activities(){
           </Header>
           <Main>
             <Hours>
-              <Th>01</Th>
-              <Th>02</Th>
-              <Th>03</Th>
-              <Th>04</Th>
-              <Th>05</Th>
-              <Th>06</Th>
-              <Th>07</Th>
-              <Th>08</Th>
-              <Th>09</Th>
-              <Th>10</Th>
-              <Th>11</Th>
-              <Th>12</Th>
+              {Ths}
             </Hours>
             <TBody>
             <Weeks>
