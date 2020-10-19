@@ -19,19 +19,19 @@ const size = css`
   }
 `;
 
-
 export const Page = styled.div`
   padding: 10px;
-  padding-left: 95px;
+  padding-left: 35%;
   margin: 10px;
   border-radius: 10px;
   border: 2px solid var(--color-bg-tertiary);
   font-weight: 600;
-  font-size: 14pt;
+  font-size: 12pt;
   cursor: pointer;
 
   &:hover{
-    border: 2px solid var(--color-bg-secundary);
+    background-color: var(--color-bg-secundary);
+    border: 2px solid var(--color-primary);
   }
 
   @media (max-width: ${mdCompact}){
@@ -53,7 +53,7 @@ export const Header = styled.div`
   font-weight: 700;
 
   > span{
-    color: #561AFD;
+    color: var(--color-primary);
   }
 
   @media (max-width: ${mdCompact}){
@@ -71,8 +71,10 @@ export const StyledLink = styled(NavLink)`
   text-decoration: none;
 
   &.active > ${Page} {
-    background: var(--color-bg-secundary);
+    background: var(--color-primary);
   }
+
+  &.end > ${Page} {  }
 `;
 
 export const Container = styled.div`
@@ -87,10 +89,11 @@ export const Container = styled.div`
 const icon = css`
   margin-top: 1px;
   position: absolute;
-  left: 80px;
+  margin-left: -35px;
   @media (max-width: ${mdCompact}){
     &{
       position: relative;
+      margin-left: 0;
       left: 5px;
     }
   }

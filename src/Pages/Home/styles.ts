@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const mdCompact = '1200px';
+// const mdCompact = '1200px';
 const xsCompact = '900px';
 
 export const Wrapper = styled.div`
@@ -19,6 +19,7 @@ export const Main = styled.div`
   flex-direction: row;
   width: 100%;
   height: 100%;
+  padding: 10px;
 
   @media (max-width: ${xsCompact}){
     &{
@@ -31,29 +32,41 @@ export const Main = styled.div`
 
 export const Progress = styled.div`
   background-color: var(--color-bg-secundary);
-  width: 300px;
+  /*
+  min-width: 300px;
+  width: 25%;
+  min-height: 500px;
+  height: 75%; */
   height: 500px;
   border-radius: 20px;
-  margin: 20px;
+  margin: 15px;
   @media (max-width: ${xsCompact}){
     &{
       width: 90%;
-      height: 25%;
+      height: 150px;
+      min-width: 0;
+      min-height: 0;
     }
   }
 `;
 
 export const Tasks = styled.div`
+  /* 
+  min-width: 465px;
+  width: 65%;
+  min-height: 500px;
+  height: 75%; */
   background-color: var(--color-bg-secundary);
-  width: 700px;
   height: 500px;
   border-radius: 20px;
-  margin: 20px;
+  margin: 15px;
   @media (max-width: ${xsCompact}){
     &{
       width: 90%;
-      height: 50%;
+      height: 320px;
       margin-top: 0;
+      min-width: 0;
+      min-height: 0;
     }
   }
 `;

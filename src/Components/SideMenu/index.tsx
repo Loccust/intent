@@ -14,7 +14,7 @@ function SideMenu(){
         <StyledLink to='/finances'>
           <Page> <FinancesIcon/> <span>Finances </span></Page>
         </StyledLink>
-        <StyledLink to='/logout'>
+        <StyledLink to='/logout' className='end'>
           <Page> <LogOutIcon/> <span>Logout </span> </Page>
         </StyledLink>
     </Container>
