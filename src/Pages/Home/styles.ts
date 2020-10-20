@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Main = styled.div`
-  background-color: var(--color-bg-primary);
+  background-color: ${props => props.theme.colors.background};
   justify-content: center;
   align-items: center;
   display: flex;
@@ -31,7 +31,7 @@ export const Main = styled.div`
 `;
 
 export const Progress = styled.div`
-  background-color: var(--color-bg-secundary);
+  background-color: ${props => props.theme.colors.surface};
   /*
   min-width: 300px;
   width: 25%;
@@ -56,7 +56,7 @@ export const Tasks = styled.div`
   width: 65%;
   min-height: 500px;
   height: 75%; */
-  background-color: var(--color-bg-secundary);
+  background-color: ${props => props.theme.colors.surface};
   height: 500px;
   border-radius: 20px;
   margin: 15px;

@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Container = styled.div`
-  background-color: var(--color-bg-primary);
+  background-color: ${props => props.theme.colors.background};
   position: relative;
   display: flex;
   flex-direction: column;
@@ -40,7 +40,7 @@ export const Main = styled.div`
       height: 100vh;
       width: 100%;
       min-width: 0;
-      background-color: var(--color-bg-primary);
+      background-color: ${props => props.theme.colors.background};
     }
   }
 `;

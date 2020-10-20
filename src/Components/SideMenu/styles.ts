@@ -24,14 +24,14 @@ export const Page = styled.div`
   padding-left: 35%;
   margin: 10px;
   border-radius: 10px;
-  border: 2px solid var(--color-bg-tertiary);
+  border: 2px solid ${props => props.theme.colors.menu};
   font-weight: 600;
   font-size: 12pt;
   cursor: pointer;
 
   &:hover{
-    background-color: var(--color-bg-secundary);
-    border: 2px solid var(--color-primary);
+    background-color: ${props => props.theme.colors.surface};
+    border: 2px solid ${props => props.theme.colors.primary};
   }
 
   @media (max-width: ${mdCompact}){
@@ -53,7 +53,7 @@ export const Header = styled.div`
   font-weight: 700;
 
   > span{
-    color: var(--color-primary);
+    color: ${props => props.theme.colors.primary};
   }
 
   @media (max-width: ${mdCompact}){
@@ -71,7 +71,8 @@ export const StyledLink = styled(NavLink)`
   text-decoration: none;
 
   &.active > ${Page} {
-    background: var(--color-primary);
+    background: ${props => props.theme.colors.primary};
+    color: #fff;
   }
 
   &.end > ${Page} {  }
@@ -79,7 +80,7 @@ export const StyledLink = styled(NavLink)`
 
 export const Container = styled.div`
   ${size};
-  background-color: var(--color-bg-tertiary);
+  background-color: ${props => props.theme.colors.menu};
   display: block;
   height: 100%;
   left: 0px;

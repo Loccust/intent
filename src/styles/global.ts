@@ -16,14 +16,14 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body{
-        background-color: var(--color-bg-primary);
+        background-color: ${props => props.theme.colors.background};
     }
 
     *, button, input {
         border: 0;
         background: none;
         font-family: 'Montserrat', sans-serif;
-        color: var(--color-font-primary);
+        color: ${props => props.theme.colors.text};
     }
 `;
 
