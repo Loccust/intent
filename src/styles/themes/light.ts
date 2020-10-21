@@ -4,7 +4,7 @@ const light = {
         primary: '#561AFD',
         background: '#ECEDF1',
         surface: '#FFF',
-        menu: '#FFF',
+        menu: '#f5f5f5',
         text: '#333'
     }
 };

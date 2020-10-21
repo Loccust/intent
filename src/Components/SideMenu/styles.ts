@@ -20,17 +20,17 @@ const size = css`
 `;
 
 export const Page = styled.div`
+  border: 2px solid ${props => props.theme.colors.menu};
+  color: ${props => props.theme.colors.text};
   padding: 10px;
   padding-left: 35%;
   margin: 10px;
   border-radius: 10px;
-  border: 2px solid ${props => props.theme.colors.menu};
   font-weight: 600;
   font-size: 12pt;
   cursor: pointer;
 
   &:hover{
-    background-color: ${props => props.theme.colors.surface};
     border: 2px solid ${props => props.theme.colors.primary};
   }
 
@@ -72,6 +72,9 @@ export const StyledLink = styled(NavLink)`
 
   &.active > ${Page} {
     background: ${props => props.theme.colors.primary};
+  }
+
+  &.active > ${Page} > * {
     color: #fff;
   }
 
