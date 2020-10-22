@@ -2,14 +2,18 @@ import React from 'react';
 import SideMenu from '../../Components/SideMenu';
 import { Wrapper, Container, Main, Header, Title, SubTitle, Hours, Th, Weeks, TBody, Td, Event  } from './styles';
 
-function Activities(){
+interface Props{
+  toggleTheme():void;
+}
+
+const Activities: React.FC<Props> = ({ toggleTheme }) => {
   let Ths = []
     for(let i=0; i<=12; i++){
       Ths.push(<Th>{i}</Th>);
     }
   return(
       <Wrapper>
-        <SideMenu/>
+        <SideMenu toggleTheme={toggleTheme}/>
         <Container>
           <Header>
             <Title> Hi User, </Title>

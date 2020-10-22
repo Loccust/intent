@@ -3,14 +3,18 @@ import { Container, Header, Page, StyledLink, HomeIcon, ActivitiesIcon, Finances
 import Switch from 'react-switch';
 import {ThemeContext} from 'styled-components';
 
-function SideMenu(){
-  const { colors } = useContext(ThemeContext)
+interface Props{
+  toggleTheme():void;
+}
+
+const SideMenu: React.FC<Props> = ( { toggleTheme } ) => {
+  const { colors, title } = useContext(ThemeContext)
   return(
     <Container>
       <Header><span>Intent</span>.io
         <Switch 
-          onChange={() => {}}
-          checked={true}
+          onChange={toggleTheme}
+          checked={title === "dark"}
           checkedIcon={false}
           uncheckedIcon={false}
           height={10}

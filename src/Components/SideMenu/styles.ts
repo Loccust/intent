@@ -51,6 +51,7 @@ export const Header = styled.div`
   text-align: center;
   font-size: 20pt;
   font-weight: 700;
+  color: ${props => props.theme.colors.text};
 
   > span{
     color: ${props => props.theme.colors.primary};

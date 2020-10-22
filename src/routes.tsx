@@ -3,12 +3,16 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import  Activities from './Pages/Activities/index'
 import Home from './Pages/Home';
 
-function Routes(){
+interface Props{
+    toggleTheme():void;
+}
+
+const Routes: React.FC<Props> = ( { toggleTheme } ) => {
     return(
         <BrowserRouter>
             <Switch>
-                <Route path="/" exact={true} component={Home}/>
-                <Route path="/activities" component={Activities} />
+                <Route path="/" exact={true} component={ () => <Home toggleTheme={toggleTheme}/>} />
+                <Route path="/activities" component={Activities}/>
             </Switch>
         </BrowserRouter>
     );
