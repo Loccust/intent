@@ -1,8 +1,7 @@
 import React from 'react';
-import { Wrapper, Progress, Tasks, Main, BottomBar}  from './styles';
-import {FiHome, FiCalendar, FiUser, FiDollarSign } from 'react-icons/fi'
+import { Wrapper, Progress, Tasks, Main }  from './styles';
 import SideMenu from '../../Components/SideMenu';
-import { NavLink } from 'react-router-dom';
+import BottomBar from '../../Components/BottomBar';
 
 interface Props{
     toggleTheme():void;
@@ -14,24 +13,13 @@ const Home: React.FC<Props> = ( { toggleTheme } ) => {
             <SideMenu toggleTheme={toggleTheme}/>
             <Main>
                 <Progress>
+                    <h3> Progress </h3>
                 </Progress>
                 <Tasks>
+                    <h3> Tasks </h3>
                 </Tasks>
             </Main>
-            <BottomBar>
-                <NavLink to='/' exact className="link">
-                    <FiHome className="icon"/> <span>Home </span>
-                </NavLink>
-                <NavLink to='/activities' className="link">
-                    <FiCalendar className="icon"/> <span>Activities </span>
-                </NavLink>
-                <NavLink to='/finances' className="link">
-                    <FiDollarSign className="icon"/> <span>Finances </span>
-                </NavLink>
-                <NavLink to='/logout' className="link">
-                    <FiUser className="icon"/> <span>Profile </span>
-                </NavLink>
-            </BottomBar>
+            <BottomBar/>
         </Wrapper>
     );
 }
