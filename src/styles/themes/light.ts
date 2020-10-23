@@ -3,8 +3,9 @@ const light = {
     colors: { 
         primary: '#561AFD',
         background: '#ECEDF1',
-        surface: '#FFF',
+        surface: '#f9f9f9',
         menu: '#f5f5f5',
+        border: '#ddd',
         text: '#333'
     }
 };

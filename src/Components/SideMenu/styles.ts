@@ -6,7 +6,7 @@ const mdCompact = '1200px';
 const xsCompact = '900px';
 
 const size = css`
-  width: 360px;
+  width: 320px;
   @media (max-width: ${mdCompact} ){
     &{
       width: 70px;
@@ -85,6 +85,7 @@ export const StyledLink = styled(NavLink)`
 export const Container = styled.div`
   ${size};
   background-color: ${props => props.theme.colors.menu};
+  border-right: 1px solid ${props => props.theme.colors.border};
   display: block;
   height: 100%;
   left: 0px;

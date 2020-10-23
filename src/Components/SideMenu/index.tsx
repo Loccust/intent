@@ -36,6 +36,7 @@ const SideMenu: React.FC<Props> = ( { toggleTheme } ) => {
           <Page> <LogOutIcon/> <span>Logout </span> </Page>
         </StyledLink>
     </Container>
+    
   );
 }
 
