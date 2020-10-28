@@ -33,7 +33,7 @@ export const Container = styled.div`
         display: none;
         margin-left: 5px;
         font-size: 13pt;
-        font-weight: 400;
+        font-weight: bold;
       }
     }
 
