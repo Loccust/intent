@@ -29,6 +29,14 @@ export const Main = styled.div`
   }
 `;
 
+export const Category = styled.div`
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: 42.5px;
+`;
+
 export const Progress = styled.div`
   background-color: ${props => props.theme.colors.surface};
   border: 1px solid ${props => props.theme.colors.border};
@@ -49,12 +57,60 @@ export const Progress = styled.div`
 `;
 
 export const Task = styled.div`
-  border-bottom: 1px solid #323541;
+  border-bottom: 1px solid ${props => props.theme.colors.border};
   justify-content: flex-start;
   align-items: center;
   display: flex;
   width: 100%;
   height: 42.5px;
+
+  & > span.itemTask{
+    margin-left: 10px;
+    font-weight: normal;
+  }
+
+  & > input{
+    opacity: 0;
+    z-index: 2;
+    zoom: 1.75;
+    position: absolute;
+    cursor: pointer;
+  };
+
+  & > span.styledCheckBox{
+    height: 20px;
+    width: 20px;
+    margin-top: -2.5px;
+    border-radius: 5px;
+    border: 2px solid ${props => props.theme.colors.primary};
+    cursor: pointer;
+  }
+
+  & > span.styledCheckBox:disabled{
+    cursor: text;
+  }
+
+  & > span.styledCheckBox:after{
+    content: "";
+    position: absolute;
+    height: 8px;
+    width: 5px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+	  margin: 1px 4px;
+    transition: all 0.25s ease;
+  }
+
+  & > input:checked + span.styledCheckBox{
+    background: ${props => props.theme.colors.primary};
+  };
+
+  & > input:checked + span.styledCheckBox:after {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+  }
+
 `;
 
 export const Tasks = styled.div`
@@ -72,12 +128,18 @@ export const Tasks = styled.div`
   };
 
   & > input.newTask{
-    background-color: #2C2F3D;
+    background-color: ${props => props.theme.colors.border};
+    border: 1px solid ${props => props.theme.colors.border};  ;
     width: 100%;
     padding: 10px;
     border-radius: 10px;
     margin: 10px 0;
     color: ${props => props.theme.colors.text};
+  };
+
+  & > input.newTask:focus{
+    outline: none;
+    border: 1px solid ${props => props.theme.colors.primary};
   };
 
   & > input.newTask::placeholder{
