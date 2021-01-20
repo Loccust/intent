@@ -7,14 +7,13 @@ interface Props{
     toggleTheme():void;
 }
 interface IitemTask{
-    name: string;
+    description: string;
     categoryId: number;
 }
 
 interface ICategory{
     id: number;
-    name: string;
-    color: string;
+    description: string;
 }
 
 const Home: React.FC<Props> = ( { toggleTheme } ) => {
@@ -26,22 +25,20 @@ const Home: React.FC<Props> = ( { toggleTheme } ) => {
     const CategoryList: ICategory[] = [
         {
             id: 0, 
-            name: 'English',
-            color: '#000'
+            description: 'English'
         },
         { 
             id: 1,
-            name: 'Programming',
-            color: '#CCC'
+            description: 'Programming'
         },
     ];
 
     CategoryList.forEach(itemCategory => {
         CategoryContainer.push(
         <Category>
-            <span className="mark" style={{ backgroundColor: itemCategory.color }}></span>
+            <span className="mark" style={{ backgroundColor: '#fff' }}></span>
             <span className="itemCategory">
-                { itemCategory.name }
+                { itemCategory.description }
             </span>
         </Category>);
     });
@@ -49,11 +46,11 @@ const Home: React.FC<Props> = ( { toggleTheme } ) => {
     const TasksContainer: Array<Object> = [];
     const TaskList: IitemTask[] = [
         { 
-            name: 'study',
+            description: 'study',
             categoryId: 0
         },
         { 
-            name: 'workout',
+            description: 'workout',
             categoryId: 0
         },
     ];
@@ -63,17 +60,15 @@ const Home: React.FC<Props> = ( { toggleTheme } ) => {
         categoryItem = CategoryList.find((category:ICategory)=> category.id === taskItem.categoryId) 
         ?? {
             id: 0, 
-            name: 'no one category',
-            color: '#ccc'
+            description: 'no one category'
         };
         TasksContainer.push(
         <Task>
-            {/* <input type="checkbox"/> */}
-            <span className="styledCheckBox" onClick={check}
-            style={{ border: "2px solid " + categoryItem.color,
-                     background: checked ? "salmon" : "papayawhip" }}>
-            </span>
-            <span className="itemTask">{ taskItem.name }</span>
+            <input type="checkbox"/>
+            {/* <span className="styledCheckBox" onClick={check}
+            style={{ background: checked ? "transparent" : "transparent" }}>
+            </span> */}
+            <span className="itemTask">{ taskItem.description }</span>
         </Task>);
     });
 

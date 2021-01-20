@@ -12,7 +12,7 @@ const Routes: React.FC<Props> = ( { toggleTheme } ) => {
         <BrowserRouter>
             <Switch>
                 <Route path="/" exact={true} component={ () => <Home toggleTheme={toggleTheme}/>} />
-                <Route path="/activities" component={Activities}/>
+                {/* <Route path="/activities" component={Activities}/> */}
             </Switch>
         </BrowserRouter>
     );

@@ -26,7 +26,7 @@ const SideMenu: React.FC<Props> = ( { toggleTheme } ) => {
         <StyledLink to='/' exact>
           <Page> <HomeIcon/><span>Home</span></Page>
         </StyledLink>
-        <StyledLink to='/activities'>
+        <StyledLink to='/soon'>
           <Page> <ActivitiesIcon/> <span>Activities </span></Page>
         </StyledLink>
         <StyledLink to='/finances'>

@@ -88,21 +88,24 @@ export const Task = styled.div`
     font-weight: normal;
   }
 
-  & > input{
+  /* & > input{
     opacity: 0;
     z-index: 2;
     zoom: 1.75;
     position: absolute;
     cursor: pointer;
-  };
+  }; */
 
   & > span.styledCheckBox{
     height: 20px;
     width: 20px;
     margin-top: -2.5px;
     border-radius: 5px;
+    background-color: ${props => props.theme.colors.surface};
+    border: 2px solid ${props => props.theme.colors.primary};
     cursor: pointer;
   }
+
 
   & > span.styledCheckBox:disabled{
     cursor: text;
