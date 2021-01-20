@@ -31,21 +31,40 @@ export const Main = styled.div`
 
 export const Category = styled.div`
   justify-content: flex-start;
+  background-color: #2c2f3d;
   align-items: center;
-  display: flex;
-  width: 100%;
+  font-size: 0.9rem;
   height: 42.5px;
+  display: flex;
+  margin: 5px 0;
+  width: 100%;
+
+  & > span.mark {
+    width: 5px;
+    height: 42.5px;
+    position: absolute;
+  }
+
+  & > span.itemCategory {
+    margin: 0 15px;
+  }
+
 `;
 
 export const Progress = styled.div`
   background-color: ${props => props.theme.colors.surface};
   border: 1px solid ${props => props.theme.colors.border};
-  max-width: 280px;
-  height: 500px;
-  border-radius: 20px;
-  padding: 25px 35px;
+  border-radius: 5px;
+  max-width: 300px;
+  padding: 7.5px;
+  height: 550px;
   margin: 15px;
   flex: 1;
+
+  & > div.title{
+    text-align: center;
+    padding: 5px 0;
+  }
 
   @media (max-width: ${xsCompact}){
     &{
@@ -82,7 +101,6 @@ export const Task = styled.div`
     width: 20px;
     margin-top: -2.5px;
     border-radius: 5px;
-    border: 2px solid ${props => props.theme.colors.primary};
     cursor: pointer;
   }
 
@@ -116,24 +134,24 @@ export const Task = styled.div`
 export const Tasks = styled.div`
   background-color: ${props => props.theme.colors.surface};
   border: 1px solid ${props => props.theme.colors.border};
-  max-width: 650px;
-  height: 500px;
-  border-radius: 20px;
-  padding: 25px 30px;
+  max-width: 700px;
+  height: 550px;
+  border-radius: 5px;
+  padding: 15px 25px;
   margin: 15px;
   flex: 1;
 
-  & > h1{
-    margin: 0 5px;
-  };
+  & > div.title{
+    padding: 5px 0;
+  }
 
   & > input.newTask{
     background-color: ${props => props.theme.colors.border};
     border: 1px solid ${props => props.theme.colors.border};  ;
     width: 100%;
     padding: 10px;
-    border-radius: 10px;
-    margin: 10px 0;
+    border-radius: 5px;
+    margin: 10px -2.5px;
     color: ${props => props.theme.colors.text};
   };
 

@@ -25,7 +25,7 @@ export const Page = styled.div`
   padding: 10px;
   padding-left: 35%;
   margin: 10px;
-  border-radius: 10px;
+  border-radius: 5px;
   font-weight: 600;
   font-size: 12pt;
   cursor: pointer;
