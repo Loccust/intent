@@ -3,6 +3,7 @@ import { Request, Response } from 'express';
 import { GetTasksCommand } from '../commands/getTasks';
 import { SetTaskCommand } from '../commands/setTask';
 import { SetTaskModel, SetTaskStatusModel } from '../models/TaskModel';
+import { Task } from '../entities/Task';
 
 export default class TaskController {
     async getTasksByCategory(request: Request, response: Response): Promise<Response> 
@@ -10,7 +11,18 @@ export default class TaskController {
         try {
             const { categoryId } = request.query;
             const getTasks = new GetTasksCommand();
-            return getTasks.execute(categoryId, response);
+            getTasks.execute(categoryId).then((data: Array<Task>) => {
+                if (data.length > 0)
+                    response.status(200).send(data);
+                else
+                    response.status(200).send({ message: 'No one Task found.'});
+            }).catch(err => {
+                return response.status(400).json({
+                    message: 'An Error occurred while getting Tasks.',
+                    data: err
+                });
+            });
+
         } catch (err) {
             return response.status(400).json({
                 message: err.message || 'Unexpected error'
@@ -22,9 +34,16 @@ export default class TaskController {
         try {
             const setTaskModel: SetTaskModel = request.body;
             const setTask = new SetTaskCommand();
-            setTask.execute(setTaskModel);
-            
-            return response.status(201).send();
+            setTask.execute(setTaskModel).then(x => {
+                response.status(201).send({
+                    message: 'Tasks created successfully! '
+                })
+            }).catch(err => {
+                return response.status(400).json({
+                    message: 'An Error occurred while creating Task.',
+                    data: err
+                });
+            });
         } catch (err) {
             return response.status(400).json({
                 message: err.message || 'Unexpected error'
