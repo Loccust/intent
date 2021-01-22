@@ -8,9 +8,10 @@ const taskController = new TaskController();
 
 
 router.get('/category', categoryController.getCategories);
-router.post('/category', categoryController.setCategory);
+router.post('/category/insert', categoryController.setCategory);
+router.delete('/category', categoryController.deleteCategory);
 router.get('/task', taskController.getTasksByCategory);
-router.post('/task', taskController.setTask);
-router.put('/taskstatus', taskController.changeStatus)
+router.post('/task/insert', taskController.setTask);
+router.put('/task/status', taskController.changeStatus);
  
 export default router;
